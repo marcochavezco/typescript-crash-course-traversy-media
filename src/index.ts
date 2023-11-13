@@ -36,3 +36,29 @@ enum Direction2 {
   Left = 'Left',
   Right = 'Right',
 }
+
+// Objects
+
+type User = {
+  id: number;
+  name: string;
+};
+
+const user: User = {
+  id: 10,
+  name: 'Marco',
+};
+
+// Type assertion
+let cid: any = 1;
+// let customerId = <number>cid;
+let customerId = cid as number;
+
+// Functions
+function addNum(x: number, y: number): number {
+  return x + y;
+}
+
+function log(message: string | number): void {
+  console.log(message);
+}
