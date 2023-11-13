@@ -54,3 +54,20 @@ const user1 = {
 };
 const add = (x, y) => x + y;
 const sub = (x, y) => x - y;
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is registered`;
+    }
+}
+const marco = new Person(1, 'Marco');
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name); // calling the parent class constructor
+        this.position = position;
+    }
+}
+const employee1 = new Employee(2, 'John', 'Developer');

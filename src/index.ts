@@ -81,3 +81,36 @@ interface MathFn {
 
 const add: MathFn = (x: number, y: number): number => x + y;
 const sub: MathFn = (x: number, y: number): number => x - y;
+
+// Classes
+interface PersonInterface {
+  id: number;
+  name: string;
+  register(): string;
+}
+
+class Person implements PersonInterface {
+  id: number;
+  name: string;
+
+  constructor(id: number, name: string) {
+    this.id = id;
+    this.name = name;
+  }
+
+  register() {
+    return `${this.name} is registered`;
+  }
+}
+
+const marco = new Person(1, 'Marco');
+
+class Employee extends Person {
+  position: string;
+  constructor(id: number, name: string, position: string) {
+    super(id, name); // calling the parent class constructor
+    this.position = position;
+  }
+}
+
+const employee1 = new Employee(2, 'John', 'Developer');
